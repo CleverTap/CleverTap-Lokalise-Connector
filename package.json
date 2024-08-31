@@ -35,7 +35,7 @@
     "fastify-plugin": "^4.5.1",
     "fastify-type-provider-zod": "^1.1.9",
     "mockhttp": "^0.0.1",
-    "newrelic": "^11.10.4",
+    "newrelic": "^11.23.2",
     "pino": "^8.18.0",
     "undici": "^6.6.2",
     "zod": "^3.22.4"
