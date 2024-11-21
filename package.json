@@ -37,7 +37,7 @@
     "mockhttp": "^0.0.1",
     "newrelic": "^11.10.4",
     "pino": "^8.18.0",
-    "undici": "^6.6.2",
+    "undici": "^6.19.7",
     "zod": "^3.22.4"
   },
   "devDependencies": {
