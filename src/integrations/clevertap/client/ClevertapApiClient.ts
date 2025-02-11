@@ -12,9 +12,9 @@ import type {
 
 import { APIAbstract } from './APIAbstract'
 import {
-  ClevertapAuthorizationApiResponse, ClevertapContentBlockListItem,
+  ClevertapAuthorizationApiResponse,
   ClevertapEmailTemplate,
-  ClevertapTemplatesList, ClevertapTemplatesListItem,
+  ClevertapTemplatesList,
   getTemplateByIdParams,
   TemplateByIdParams
 } from "./clevertapApiTypes";
