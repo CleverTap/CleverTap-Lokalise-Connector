@@ -97,28 +97,28 @@ export class ClevertapApiClient extends APIAbstract {
         try {
           return this.getEmailTemplates(accountId, passcode, pageNumber, pageSize)
         } catch (e) {
-          return new Promise(() => {
-            return {
+          return new Promise((resolve) => {
+            resolve({
               templates: [],
               total: 0,
               pageNumber: 1,
               pageSize: 20,
               status: 'success',
-            }
+            })
           })
         }
       case MessageMediumTypes.ContentBlock:
         try {
           return this.getContentBlocks(accountId, passcode, pageNumber, pageSize)
         } catch (e) {
-          return new Promise(() => {
-            return {
+          return new Promise((resolve) => {
+            resolve({
               contentBlocks: [],
               total: 0,
               pageNumber: 1,
               pageSize: 20,
               status: 'success',
-            }
+            })
           })
         }
       default:
