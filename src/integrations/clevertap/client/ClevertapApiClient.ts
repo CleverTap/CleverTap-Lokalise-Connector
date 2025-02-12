@@ -11,13 +11,13 @@ import type {
 } from '../types'
 
 import { APIAbstract } from './APIAbstract'
-import {
+import type {
   ClevertapAuthorizationApiResponse,
   ClevertapEmailTemplate,
   ClevertapTemplatesList,
   getTemplateByIdParams,
-  TemplateByIdParams
-} from "./clevertapApiTypes";
+  TemplateByIdParams,
+} from './clevertapApiTypes'
 import { MessageMediumTypes } from './clevertapApiTypes'
 
 export class ClevertapApiClient extends APIAbstract {
@@ -91,7 +91,7 @@ export class ClevertapApiClient extends APIAbstract {
     messageMedium: string,
     pageNumber: number,
     pageSize: number,
-  ) {
+  ): Promise<ClevertapTemplatesList> {
     switch (messageMedium as MessageMediumTypes) {
       case MessageMediumTypes.Email:
         try {
@@ -103,7 +103,6 @@ export class ClevertapApiClient extends APIAbstract {
               total: 0,
               pageNumber: 1,
               pageSize: 20,
-              status: 'success',
             })
           })
         }
@@ -117,7 +116,6 @@ export class ClevertapApiClient extends APIAbstract {
               total: 0,
               pageNumber: 1,
               pageSize: 20,
-              status: 'success',
             })
           })
         }
