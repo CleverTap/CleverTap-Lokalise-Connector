@@ -11,13 +11,13 @@ import type {
 } from '../types'
 
 import { APIAbstract } from './APIAbstract'
-import type {
+import {
   ClevertapAuthorizationApiResponse,
   ClevertapEmailTemplate,
   ClevertapTemplatesList,
   getTemplateByIdParams,
-  TemplateByIdParams,
-} from './clevertapApiTypes'
+  TemplateByIdParams
+} from "./clevertapApiTypes";
 import { MessageMediumTypes } from './clevertapApiTypes'
 
 export class ClevertapApiClient extends APIAbstract {
@@ -94,9 +94,33 @@ export class ClevertapApiClient extends APIAbstract {
   ) {
     switch (messageMedium as MessageMediumTypes) {
       case MessageMediumTypes.Email:
-        return this.getEmailTemplates(accountId, passcode, pageNumber, pageSize)
+        try {
+          return this.getEmailTemplates(accountId, passcode, pageNumber, pageSize)
+        } catch (e) {
+          return new Promise((resolve) => {
+            resolve({
+              templates: [],
+              total: 0,
+              pageNumber: 1,
+              pageSize: 20,
+              status: 'success',
+            })
+          })
+        }
       case MessageMediumTypes.ContentBlock:
-        return this.getContentBlocks(accountId, passcode, pageNumber, pageSize)
+        try {
+          return this.getContentBlocks(accountId, passcode, pageNumber, pageSize)
+        } catch (e) {
+          return new Promise((resolve) => {
+            resolve({
+              contentBlocks: [],
+              total: 0,
+              pageNumber: 1,
+              pageSize: 20,
+              status: 'success',
+            })
+          })
+        }
       default:
         throw new Error('Wrong content type')
     }
