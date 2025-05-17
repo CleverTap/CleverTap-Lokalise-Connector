@@ -25,7 +25,7 @@
     "@bugsnag/js": "^7.22.4",
     "@fastify/awilix": "^5.0.0",
     "@lokalise/fastify-extras": "^16.4.0",
-    "@lokalise/node-core": "^9.9.0",
+    "@lokalise/node-core": "^10.0.0",
     "awilix": "^10.0.1",
     "dotenv": "^16.4.4",
     "fastify": "^4.26.1",
@@ -37,7 +37,7 @@
     "mockhttp": "^0.0.1",
     "newrelic": "^11.10.4",
     "pino": "^8.18.0",
-    "undici": "^6.6.2",
+    "undici": "^6.21.2",
     "zod": "^3.22.4"
   },
   "devDependencies": {
